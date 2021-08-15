@@ -1,0 +1,308 @@
+@import './variables';
+
+body { 
+    margin :0;
+    padding: 0;
+    background-color: blue;
+}
+.background-nav{
+    max-width: 100%;
+    height: auto;
+    background-color: whitesmoke;
+}
+.column-two{
+    padding: 30px;
+}
+.column-two a {
+    font-size: 20px;
+    padding-left: 30px;
+    text-decoration: none;
+    color : #764134;
+    font-family: $normal-text-font;
+    font-weight: 600;
+}
+.column{
+    background-color: whitesmoke;
+}
+#toggle {
+
+    z-index: 100;
+    margin : 20px 40px 0 0;
+    font-size: 35px;
+    text-align: right;
+}
+#toggle { 
+    display: none;
+}
+@media screen and (max-width:850px) {
+ .column-two{
+     text-align: center;
+     width: 100%;
+     position: absolute;
+     display: none;
+ }
+    #toggle { 
+     display: block;
+     cursor: pointer;
+ }
+ .column-two a{
+     display: block;
+    font-size: 30px;
+    padding: 30px;
+    border-bottom: 1px solid rgb(95, 94, 94);
+ }
+ 
+  }
+  @media screen and (max-width:550px) {.column-two{ margin-left: 0px; }  }
+
+  @mixin flexCenter ($direction){
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: $direction;
+  }
+  @mixin flexLeft ($direction){
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: $direction;
+}
+@mixin flexRight ($direction){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+@mixin change-size($device) {
+    @if $device==tablet {
+        @media only screen and (max-width: 1444px) {
+         @content;
+        }
+    }
+    @if $device == phone {
+        @media only  screen and (max-width: 773px) {
+          @content;
+        }
+    }
+}
+#background-img {
+    background-image: url("../Images/landPage-img.jpg");
+    max-width: 100%;
+    height: 90vh;
+    background-size: cover;
+}
+.pickup-text {
+    padding : 100px;
+    color: $second-color;
+    font-family: $main-text-font;
+    font-size: 46px;
+    text-shadow: 2px 2px  black;
+}
+.pickup-text-2 {
+    padding-left: 100px;
+    color : $second-color;
+    font-family: $normal-text-font;
+    font-size: 20px;
+    text-shadow: 2px 2px black;
+}
+.pickup-button {
+    font-size: 20px;
+    border-radius: 17px;
+    font-family: $normal-text-font;
+    color : $primary-color;
+    background-color: $second-color;
+    padding: 5px 22px;
+    margin-left: 230px;
+    margin-top: 30px;
+    transition: 0.5s;
+
+    &:hover {
+        color : $second-color;
+        background-color: $primary-color;
+        font-size: 24px;
+    }
+}
+.about-us-text {
+    color : $primary-color;
+    margin-top: 100px;
+    font-size: 56px;
+    font-family: $main-text-font;
+    text-align: center;
+}
+.about-us-row {
+    @include flexCenter(row);
+    margin-top: 100px;
+    justify-content: space-between;
+    @include change-size(tablet) {
+        @include flexCenter(column)
+    } 
+}
+.about-us-row-1 {
+    height: 600px;
+    background-color: $primary-color;
+    border-radius: 31px;
+    @include change-size(phone) {
+        height: 400px;
+    }
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.heart-img{
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.about-us-col-1{
+    margin-top: 50px;
+    @include flexCenter(column);
+}
+.about-us-col-1 h1 {
+    color: $second-color;
+    font-size: 56px;
+    font-family: $main-text-font;
+    @include change-size(phone) {
+        font-size: 40px;
+    }
+}
+.about-us-col-1 p{
+    margin: 25px;
+    color: $second-color;
+    font-size: 20px;
+    font-family: $normal-text-font;
+    @include change-size(phone) {
+        font-size: 15px;
+    }
+}
+.bg-whitesmoke {
+    background-color: whitesmoke;
+}
+.row-2{
+    margin-top: 150px;
+}
+.second-paragraph-img{
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        float: right;
+}
+.about-us-col-3{
+    @include flexCenter(column);
+}
+.about-us-col-3 h1 {
+    color: $primary-color;
+    font-size: 56px;
+    font-family: $main-text-font;
+    @include change-size(phone) {
+        font-size: 40px;
+    }
+}
+.about-us-col-3 p{
+    margin: 25px;
+    color: $primary-color;
+    font-size: 20px;
+    font-family: $normal-text-font;
+    @include change-size(phone) {
+        font-size: 15px;
+    }
+}
+.about-us-column{
+    @include flexCenter(column);
+    width: 352px;
+    height: auto;
+    background-color: $primary-color;
+    border-radius: 35px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.4s;
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: rgba(0, 0, 0, 1) 0px 5px 15px;
+
+    }
+}
+.about-us-column img {
+    margin: 50px;
+    
+}
+.about-us-column h1 {
+    margin-top: 30px;
+    color: $second-color;
+    font-family: $main-text-font;
+}
+.about-us-column p {
+   padding: 30px;
+   color: $second-color;
+   font-family: $normal-text-font;
+}
+.cafe-btn {
+    font-size: 20px;
+    padding: 12px 15px;
+    margin-top: 75px;
+    color: $second-color;
+    background-color: $primary-color;
+    border-radius: 10px;
+    transition: 0.4s;
+    &:hover {
+        color: $primary-color;
+        background-color: $second-color;
+    }
+}
+.about-us-column-2{
+    @include flexCenter(column);
+    width: 352px;
+    height: auto;
+    border-radius: 35px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.4s;
+}
+.about-us-column-2:hover.about-us-column-2 img {
+    transform: scale(1.1);
+}
+.man-title {
+font-family: $normal-text-font;
+color : $primary-color;
+transform: translate(-20px , -25px);
+}
+.about-us-column-2 img{
+    margin: 15px;
+    border-radius: 70px;
+    transition: 0.3s;
+}
+.about-us-column-2 h1 {
+    font-family: $main-text-font;
+    color : $primary-color;
+}
+.about-us-column-2 p {
+    font-family: $normal-text-font;
+    color : $primary-color;
+    padding: 30px 30px;
+    font-weight: bold;
+}
+.about-us-row-3{
+    @include flexCenter(row);
+    justify-content : center;
+}
+.about-us-row-3 input {
+    padding: 5px 50px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: rgba(0, 0, 0, 0.35);
+}
+.message-btn {
+    background-color: $primary-color;
+    color: $second-color;
+    font-family: $normal-text-font;
+    padding: 5px 10px;
+    border-radius: 10px;
+    transition: 0.4s;
+    margin-bottom: 30px;
+    &:hover {
+        color: $primary-color;
+        background-color: $second-color;
+    }
+}
+footer {
+    margin-top: 50px;
+}
+.about-us-row-4{
+    background-color: $second-color;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: auto;
+    border-radius: 25px;
+    margin-top: 100px;
+}

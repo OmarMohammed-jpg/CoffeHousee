@@ -1,0 +1,11 @@
+$(document).ready(function(){
+    $("#toggle").click(function(){
+      $(".column-two").slideToggle(300);
+    });
+  });
+  $(window).resize(function(){
+    If($(window).width()<1000)
+    {
+     $('.container').removeClass('container');
+    }
+   });
